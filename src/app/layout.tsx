@@ -11,20 +11,16 @@ export const metadata: Metadata = {
 
 type RootLayoutProps = {
   children: React.ReactNode;
-} 
+}
 
 export default function RootLayout({children}: Readonly<RootLayoutProps>) {
   return (
     <html lang="pt-br">
-      <body className="qualquer">
-        <header>
-          <h1>Header</h1>
-        </header>
-        <div className="bg-red-500">{children}</div>
+      <body>
 
-        <footer>
-          <h1>Footer</h1>
-        </footer>
+        {children}
+
+
       </body>
     </html>
   );
