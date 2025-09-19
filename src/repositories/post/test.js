@@ -1,25 +1,30 @@
-const promessa = new Promise ((resulte, reject) => {
-  const sucesso = true;
+function rand(min, max){
+  min *= 1000;
+  max *= 1000;
+  return Math.floor(Math.random() * (min - max) + min)
+}
 
-  setTimeout(() => {
-    if (sucesso) {
+function esperaAi(msg, tempo){
+  return new Promise((resolve, reject)=> {
+    if(typeof msg !== 'string') reject(false);
 
-      resulte("SUCESSO");
-    }else{
-      reject("eroooo");
-    }
-  }, 2000);
+    setTimeout(() =>{
+      resolve(msg);
+    },tempo)
+  });
+}
 
-  async function executar(){
-    try{
-      const resultado = await promessa;
-      console.log(resultado);
-    }catch(erro){
-      console.error(erro);
-    }finally{
-      console.log(finalizado);
-    }
-  }
-executar();
+const promisses = [
+  esperaAi('Teste',  rand(1000)),
+  esperaAi('teste2',  rand(5000)),
+  esperaAi('Teste3',  3000),
+  'Outro teste',
+];
 
+Promise.all(promisses)
+.then(function(valor){
+  console.log(valor);
+})
+.catch(function(error){
+  console.log(error);
 })
