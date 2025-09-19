@@ -1,25 +1,25 @@
-const promessa = new Promise((resolve, reject) => {
-  const sucesso =  true;
+const promessa = new Promise ((resulte, reject) => {
+  const sucesso = true;
 
   setTimeout(() => {
-    if(sucesso){
-      resolve(" Operação realizda com sucesso");
+    if (sucesso) {
+
+      resulte("SUCESSO");
     }else{
-      reject("ERROO")
+      reject("eroooo");
     }
   }, 2000);
 
   async function executar(){
     try{
       const resultado = await promessa;
-      console.log(resultado)
+      console.log(resultado);
     }catch(erro){
-      console.erro(erro);
+      console.error(erro);
     }finally{
-      console.log("Operaçao fianlll")
+      console.log(finalizado);
     }
-
   }
 executar();
-})
 
+})
