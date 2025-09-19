@@ -11,20 +11,13 @@ function esperaAi(msg, tempo){
     setTimeout(() =>{
       resolve(msg);
     },tempo)
-  });
+
+    resolve(msg.toUpperCase() + '- passei na promisse');
+    return;
+  }, tempo);
 }
 
-const promisses = [
-  esperaAi('Teste',  rand(1000)),
-  esperaAi('teste2',  rand(5000)),
-  esperaAi('Teste3',  3000),
-  'Outro teste',
-];
+esperaAi("Fase 1", rand(0,3))
+.then((valor) => console.log(valor))
 
-Promise.all(promisses)
-.then(function(valor){
-  console.log(valor);
-})
-.catch(function(error){
-  console.log(error);
-})
+
