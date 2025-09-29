@@ -6,7 +6,7 @@ import { readFile } from 'fs/promises';
 const ROOT_DIR = process.cwd();
 const JSON_POST_FILE_PATH = resolve(ROOT_DIR, "src", "db", "seed", "posts.json",);
 
-const SIMULATE_WAIT_IN_MS = 5000;
+const SIMULATE_WAIT_IN_MS = 0;
 
 export class JsonPostRepository implements PostRepository {
   private async simulateWait(){
@@ -14,8 +14,6 @@ export class JsonPostRepository implements PostRepository {
 
     await new Promise(resolve => setTimeout(resolve, SIMULATE_WAIT_IN_MS));
   }
-
-
 
   private async readFromDisk() : Promise<PostModel[]>  {
 
