@@ -18,7 +18,7 @@ export function Header() {
       )}
       onClick={() => alert(123)}
     >
-      Texto no meu h1
+      <a href='#'>The Blog</a>
     </h1>
   );
 }
