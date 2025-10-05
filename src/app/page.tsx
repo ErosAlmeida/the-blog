@@ -14,10 +14,10 @@ export default async function HomePage() {
 
   return (
     <div className='text-slate-900 bg-slate-100 min-h-screen '>
-
       <Container>
-
         <Header />
+
+        <section>test</section>
 
       <Suspense fallback ={<SpinLoader/>}>
         <PostsList/>
@@ -28,7 +28,6 @@ export default async function HomePage() {
       </footer>
 
         </Container>
-
     </div>
     );
 }
