@@ -5,9 +5,9 @@ import { Suspense } from "react";
 import { PostsList } from "@/components/PostsList";
 import { Container } from "@/components/Container";
 import { Header } from "@/components/Header";
-import Link from "next/link";
-import Image from "next/image";
+
 import { PostHeading } from "@/components/PostHeading";
+import { PostCoverImage } from "@/components/PostCoverImage";
 
 export default async function HomePage() {
   return (
@@ -16,19 +16,18 @@ export default async function HomePage() {
         <Header />
 
         <section className="grid grid-cols-1 gap-8 mb-16 sm:grid-cols-2 group">
-          <Link
-            className="w-full h-full object-cover object-center overflow-hidden rounded-xl"
-            href="#"
-          >
-            <Image
-              className="group-hover:scale-105 transition"
-              src="/images/img1.png"
-              width={1200}
-              height={720}
-              alt="Título do post"
-              priority
-            />
-          </Link>
+          <PostCoverImage
+            linkProps={{
+              href: "/post/asdfasdf",
+            }}
+            imageProps={{
+              width: 1200,
+              height: 720,
+              src: "/images/img1.png",
+              alt: "Alt da imagem",
+              priority: true,
+            }}
+          />
 
           <div className="flex flex-col gap-4 sm:justify-center">
             <time
