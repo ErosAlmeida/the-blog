@@ -1,12 +1,28 @@
-import { postRepository } from '@/repositories/post';
+import { postRepository } from "@/repositories/post";
+import { PostCoverImage } from "../PostCoverImage";
 
 export async function PostsList() {
   const posts = await postRepository.findAll();
 
   return (
     <div>
-      {posts.map(post => {
-        return <p key={post.id}>{post.title}</p>;
+      {posts.map((post) => {
+        return (
+          <div key={post.id}>
+            <PostCoverImage
+              linkProps={{
+                href: "/post/asdfasdf",
+              }}
+              imageProps={{
+                width: 1200,
+                height: 720,
+                src: "/images/img1.png",
+                alt: "Alt da imagem",
+                priority: true,
+              }}
+            />
+          </div>
+        );
       })}
     </div>
   );
