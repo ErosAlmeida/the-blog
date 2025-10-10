@@ -16,7 +16,7 @@ export async function PostsList() {
               imageProps={{
                 width: 1200,
                 height: 720,
-                src: "/images/img1.png",
+                src: "/images/bryen_9.png",
                 alt: "Alt da imagem",
                 priority: true,
               }}
