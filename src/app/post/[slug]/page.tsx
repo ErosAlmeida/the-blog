@@ -1,5 +1,4 @@
-import { findAPostBySlugCached } from "@/lib/post/queries";
-import { notFound } from "next/navigation";
+import { findPostBySlugCached } from "@/lib/post/queries";
 
 type PostSlugPageProps = {
   params: Promise<{ slug: string }>;
@@ -8,18 +7,7 @@ type PostSlugPageProps = {
 export default async function PostSlugPage({ params }: PostSlugPageProps) {
   const { slug } = await params;
 
-  let post;
-
-  try {
-    post = await findAPostBySlugCached(slug);
-  } catch {
-    post = undefined;
-  }
-
-  if (!post) {
-    notFound();
-  }
-
+  const post = await findPostBySlugCached(slug);
   return (
     <div>
       <p>{post.content}</p>
