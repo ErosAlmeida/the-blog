@@ -16,7 +16,7 @@ export default async function ExemploDynamicPage({
   return (
     <main className="min-h-[600px] text-4xl font-bold">
       <div>
-        Hora: {hour} (ID: {id})
+        Hora: {hour} (ID: {id}) teste
       </div>
     </main>
   );
