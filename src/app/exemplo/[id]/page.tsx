@@ -1,9 +1,11 @@
 import { formatHour } from "@/utils/format-datetime";
 
 export const dynamic = "force-static";
-export const revalidate = 10;
+export const revalidate = 30;
 
-// export const revalidate = 10;
+// export async function generateStaticParams() {
+//   return [{ id: '1' }, { id: '2' }];
+// }
 
 export default async function ExemploDynamicPage({
   params,
@@ -16,7 +18,7 @@ export default async function ExemploDynamicPage({
   return (
     <main className="min-h-[600px] text-4xl font-bold">
       <div>
-        Hora: {hour} (ID: {id}) teste
+        Hora: {hour} (ID: {id})
       </div>
     </main>
   );
