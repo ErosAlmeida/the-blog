@@ -1,12 +1,18 @@
 import { findAllPostAdmin } from "@/lib/post/queries/admin";
+import Link from "next/link";
+import clsx from "clsx";
 
 export default async function PostsListAdmin() {
   const posts = await findAllPostAdmin();
 
   return (
-    <div className="py-16">
+    <div className="mb-16">
       {posts.map((post) => {
-        return <p key={post.id}>{post.title}</p>;
+        return (
+          <div className={clsx("py-2 bg-amber-300")} key={post.id}>
+            <Link href={`/admin/post/${post.id}`}>{post.title}</Link>
+          </div>
+        );
       })}
     </div>
   );
