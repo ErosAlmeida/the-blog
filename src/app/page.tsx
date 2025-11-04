@@ -1,16 +1,15 @@
-// page.tsx (server) -> menu.tsx (server) -> link (client)
-
+import { PostFeatured } from "@/components/PostFeatured";
+import { PostsList } from "@/components/PostsList";
 import { SpinLoader } from "@/components/SpinLoader";
 import { Suspense } from "react";
-
-import PostsListAdmin from "@/components/PostsListAdmin";
 
 export const dynamic = "force-static";
 
 export default async function HomePage() {
   return (
-    <Suspense fallback={<SpinLoader className="mb-16" />}>
-      <PostsListAdmin />
+    <Suspense fallback={<SpinLoader className="min-h-20 mb-16" />}>
+      <PostFeatured />
+      <PostsList />
     </Suspense>
   );
 }

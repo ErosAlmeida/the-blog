@@ -1,16 +1,16 @@
-import PostsListAdmin from "@/components/PostsListAdmin";
+// page.tsx (server) -> menu.tsx (server) -> link (client)
+
 import { SpinLoader } from "@/components/SpinLoader";
-import { Metadata } from "next";
 import { Suspense } from "react";
 
-export const dynamic = "force-dynamic";
+import PostsListAdmin from "@/components/PostsListAdmin";
 
-export const metadata: Metadata = {
-  title: "Post Admin",
-};
+export const dynamic = "force-static";
 
-export default async function AdminPostPage() {
-  <Suspense fallback={<SpinLoader className="mb-16" />}>
-    <PostsListAdmin />
-  </Suspense>;
+export default async function HomePage() {
+  return (
+    <Suspense fallback={<SpinLoader className="mb-16" />}>
+      <PostsListAdmin />
+    </Suspense>
+  );
 }
