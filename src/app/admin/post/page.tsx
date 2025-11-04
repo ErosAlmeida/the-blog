@@ -3,7 +3,7 @@
 import { SpinLoader } from "@/components/SpinLoader";
 import { Suspense } from "react";
 
-import PostsListAdmin from "@/components/PostsListAdmin";
+import PostsListAdmin from "@/app/admin/PostsListAdmin";
 
 export const dynamic = "force-static";
 
