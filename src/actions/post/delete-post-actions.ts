@@ -1,7 +1,7 @@
 import { logColor } from "@/utils/log-color";
 
-export async function deletePostActions(formatData: FormData) {
-  const id = formatData.get("id");
-
+export async function deletePostAction(id: string) {
+  await asyncDelay(2000);
   logColor("" + id);
+  return id;
 }
