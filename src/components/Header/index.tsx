@@ -4,8 +4,6 @@ import clsx from "clsx";
 import Link from "next/link";
 
 export function Header() {
-  console.log("HEADER");
-
   return (
     <header>
       <h1
