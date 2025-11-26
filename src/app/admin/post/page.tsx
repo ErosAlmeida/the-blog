@@ -1,9 +1,8 @@
 // page.tsx (server) -> menu.tsx (server) -> link (client)
 
+import PostsListAdmin from "@/components/admin/PostsListAdmin";
 import { SpinLoader } from "@/components/SpinLoader";
 import { Suspense } from "react";
-
-import PostsListAdmin from "@/app/admin/PostsListAdmin";
 
 export const dynamic = "force-static";
 

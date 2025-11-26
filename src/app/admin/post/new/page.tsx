@@ -1,4 +1,4 @@
-import { ManagePostForm } from "@/components/ManagePostForm";
+import { ManagePostForm } from "@/components/admin/ManagePostForm";
 
 export const dynamic = "force-dynamic";
 
